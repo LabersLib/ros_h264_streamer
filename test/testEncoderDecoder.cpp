@@ -3,6 +3,7 @@
 #include <ros_h264_streamer/h264_decoder.h>
 
 #include <opencv/highgui.h>
+#include <opencv2/opencv.hpp>
 #include <cv_bridge/cv_bridge.h>
 
 int main(int argc, char * argv[])
@@ -15,10 +16,12 @@ int main(int argc, char * argv[])
 
   ros::Time::init();
 
+  // load image
   std_msgs::Header header;
   cv_bridge::CvImage cvmsg(header, "bgr8", cv::imread(argv[1]));
   sensor_msgs::ImagePtr msg = cvmsg.toImageMsg();
 
+  // Mat --> cv_bridge::CvImage --> ImageMsg --> Encoding --> H264EncoderResult --> raw buffer --> Decoding --> ImageMsg -->cv_bridge::CvImagePtr --> Mat
   std::cout << "Image loaded, image size: " << msg->width << "x" << msg->height << ", encoding: " << msg->encoding << std::endl;
 
   ros_h264_streamer::H264Encoder encoder(msg->width, msg->height, 20, 30, 1, msg->encoding);
