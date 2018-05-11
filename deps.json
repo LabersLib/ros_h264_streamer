@@ -3,7 +3,6 @@
     "name": "ros_h264_streamer",
     "workspace": "lib",
     "build": [],
-    "deps": [
-    ]
+    "deps": {}
 }
 
