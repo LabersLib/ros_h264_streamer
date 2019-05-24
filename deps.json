@@ -1,10 +1,10 @@
 {
-    "repo": "ZJLab/ros_h264_streamer",
+    "repo": "ZJLabers/ros_h264_streamer",
     "name": "ros_h264_streamer",
     "workspace": "lib",
     "build": [],
     "deps": {
-        "ros-cv-bridge": "ZJLab/ros-cv-bridge"
+        "ros-cv-bridge": "ZJLabers/ros-cv-bridge"
     }
 }
 
