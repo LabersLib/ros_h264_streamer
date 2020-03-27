@@ -1,5 +1,5 @@
 {
-    "repo": "ZJLabers/ros_h264_streamer",
+    "repo": "LabersLib/ros_h264_streamer",
     "name": "ros_h264_streamer",
     "workspace": "lib",
     "build": [],
